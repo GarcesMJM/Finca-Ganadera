@@ -40,6 +40,7 @@ public class Control_ganado extends javax.swing.JFrame {
     static String p_ventas[]=new String [40];
     public Control_ganado() {
         initComponents(); 
+        graficas();
     }
 
     /**
@@ -55,6 +56,14 @@ public class Control_ganado extends javax.swing.JFrame {
         b_vacunar = new javax.swing.JButton();
         b_vender = new javax.swing.JButton();
         b_agregar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,20 +95,150 @@ public class Control_ganado extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+        );
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+        );
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+        );
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+        );
+
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 124, Short.MAX_VALUE)
+        );
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(b_mover)
-                .addGap(83, 83, 83)
-                .addComponent(b_vacunar)
-                .addGap(83, 83, 83)
-                .addComponent(b_vender)
-                .addGap(60, 60, 60)
-                .addComponent(b_agregar)
-                .addContainerGap(1405, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(b_mover)
+                        .addGap(83, 83, 83)
+                        .addComponent(b_vacunar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(b_vender)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(b_agregar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,138 +249,26 @@ public class Control_ganado extends javax.swing.JFrame {
                     .addComponent(b_vacunar)
                     .addComponent(b_vender)
                     .addComponent(b_agregar))
-                .addContainerGap(523, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_agregarActionPerformed
-        // TODO add your handling code here:
-
-        try {
-            String raza[];
-            int r1=0, r3=0, r2=0, r4=0, r5=0, r6=0;
-            //Gráfico potrero1
-            for (int i = 0; i < potrero1.length; i++) {
-                raza=potrero1[i].split("-");
-                if(raza[0].equals("R1"))r1++;
-                else if(raza[0].equals("R3"))r3++;
-            }
-
-            DefaultPieDataset datos1 = new DefaultPieDataset();
-            datos1.setValue("Raza 1 = "+r1, r1);
-            datos1.setValue("Raza 3 = "+r3, r3);
-
-            JFreeChart grafico_potrero1 = ChartFactory.createPieChart(
-                "Potrero 1",         //nombre del grafico
-                datos1,        //datos
-                true,        //nombre de categorias
-                true,        //herramientas
-                false        //generaciónn de URL
-            );
-
-            ChartPanel panel1 = new ChartPanel(grafico_potrero1);
-            panel1.setMouseWheelEnabled(true);
-            panel1.setPreferredSize(new Dimension(200,200));
-
-            jPanel1.setLayout(new BorderLayout());
-            jPanel1.add(panel1,BorderLayout.NORTH);
-
-            pack();
-            repaint();
-
-            //Gráfico portrero 2
-            for (int i = 0; i < potrero2.length; i++) {
-                raza=potrero2[i].split("-");
-                if(raza[0].equals("R2"))r2++;
-                else if(raza[0].equals("R4"))r4++;
-            }
-
-            DefaultPieDataset datos2 = new DefaultPieDataset();
-            datos2.setValue("Raza 2 = "+r2, r2);
-            datos2.setValue("Raza 4 = "+r4, r4);
-
-            JFreeChart grafico_potrero2 = ChartFactory.createPieChart(
-                "Potrero 2",         //nombre del grafico
-                datos2,        //datos
-                true,        //nombre de categorias
-                true,        //herramientas
-                false        //generaciónn de URL
-            );
-
-            ChartPanel panel2 = new ChartPanel(grafico_potrero2);
-            panel2.setMouseWheelEnabled(true);
-            panel2.setPreferredSize(new Dimension(200,200));
-
-            jPanel2.setLayout(new BorderLayout());
-            jPanel2.add(panel2,BorderLayout.NORTH);
-
-            pack();
-            repaint();
-
-            r1=0;
-            for (int i = 0; i < potrero3.length; i++) {
-                raza=potrero3[i].split("-");
-                if(raza[0].equals("R1"))r1++;
-                else if(raza[0].equals("R5"))r5++;
-            }
-
-            DefaultPieDataset datos3 = new DefaultPieDataset();
-            datos3.setValue("Raza 1 = "+r1, r1);
-            datos3.setValue("Raza 5 = "+r5, r5);
-
-            JFreeChart grafico_potrero3 = ChartFactory.createPieChart(
-                "Potrero 3",         //nombre del grafico
-                datos3,        //datos
-                true,        //nombre de categorias
-                true,        //herramientas
-                false        //generaciónn de URL
-            );
-
-            ChartPanel panel3 = new ChartPanel(grafico_potrero3);
-            panel3.setMouseWheelEnabled(true);
-            panel3.setPreferredSize(new Dimension(200,200));
-
-            jPanel3.setLayout(new BorderLayout());
-            jPanel3.add(panel3,BorderLayout.NORTH);
-
-            pack();
-            repaint();
-
-            r4=0;
-            for (int i = 0; i < potrero4.length; i++) {
-                raza=potrero4[i].split("-");
-                if(raza[0].equals("R4"))r4++;
-                else if(raza[0].equals("R6"))r6++;
-            }
-
-            DefaultPieDataset datos4 = new DefaultPieDataset();
-            datos4.setValue("Raza 4 = "+r4, r4);
-            datos4.setValue("Raza 6 = "+r6, r6);
-
-            JFreeChart grafico_potrero4 = ChartFactory.createPieChart(
-                "Potrero 4",         //nombre del grafico
-                datos4,        //datos
-                true,        //nombre de categorias
-                true,        //herramientas
-                false        //generaciónn de URL
-            );
-
-            ChartPanel panel4 = new ChartPanel(grafico_potrero4);
-            panel4.setMouseWheelEnabled(true);
-            panel4.setPreferredSize(new Dimension(200,200));
-
-            jPanel4.setLayout(new BorderLayout());
-            jPanel4.add(panel4,BorderLayout.NORTH);
-
-            pack();
-            repaint();
-
-        } catch (Exception error) {
-            System.out.println("Ocurrió un error \n" + error);
-        }
-
+        // TODO add your handling code here
     }//GEN-LAST:event_b_agregarActionPerformed
 
     private void b_venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_venderActionPerformed
@@ -441,13 +468,13 @@ public class Control_ganado extends javax.swing.JFrame {
                     if(potrero_s>4 && potrero_s<9){
                         switch(potrero_s){
                             case 5:
-                                j=0;cont_r=0;
+                      
                             for (int i = 0; i < potrero1.length; i++) {
 
                                 raza_p=potrero1[i].split("-");
 
                                 if(raza.equalsIgnoreCase("R1") && raza_p[0].equals("R1")){
-                                    potrero1[i]=raza_p[0]+" - "+raza_p[1];
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
                                     if(potrero5[j].equals("+")){
                                        potrero5[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -456,7 +483,7 @@ public class Control_ganado extends javax.swing.JFrame {
                                     }else j++;
                                 }
                                 else if(raza.equalsIgnoreCase("R3") && raza_p[0].equals("R3")){
-                                    potrero1[i]=raza_p[0]+" - "+raza_p[1];
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
                                     if(potrero5[j].equals("+")){
                                        potrero5[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -467,15 +494,96 @@ public class Control_ganado extends javax.swing.JFrame {
                                 if(cont_r==nro_reses){
                                     i=potrero1.length;
                                 }
-                            }
-                            for (int i = 0; i < 80; i++) {
-                                System.out.println(potrero1[i]);
-                            }
-                            for (int i = 0; i < 60; i++) {
-                                System.out.println(potrero5[i]);
-                            }
-                            
+                            }                            
                             break;
+                            
+                            case 6:
+                                 for (int i = 0; i < potrero1.length; i++) {
+
+                                raza_p=potrero1[i].split("-");
+
+                                if(raza.equalsIgnoreCase("R1") && raza_p[0].equals("R1")){
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero6[j].equals("+")){
+                                       potrero6[j]=potrero1[i];
+                                       potrero1[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R3") && raza_p[0].equals("R3")){
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero6[j].equals("+")){
+                                       potrero6[j]=potrero1[i];
+                                       potrero1[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                if(cont_r==nro_reses){
+                                    i=potrero1.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 7:
+                                 for (int i = 0; i < potrero1.length; i++) {
+
+                                raza_p=potrero1[i].split("-");
+
+                                if(raza.equalsIgnoreCase("R1") && raza_p[0].equals("R1")){
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero5[j].equals("+")){
+                                       potrero5[j]=potrero1[i];
+                                       potrero1[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R3") && raza_p[0].equals("R3")){
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero7[j].equals("+")){
+                                       potrero7[j]=potrero1[i];
+                                       potrero1[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                if(cont_r==nro_reses){
+                                    i=potrero1.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 8:
+                                 for (int i = 0; i < potrero1.length; i++) {
+
+                                raza_p=potrero1[i].split("-");
+
+                                if(raza.equalsIgnoreCase("R1") && raza_p[0].equals("R1")){
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero1[i];
+                                       potrero1[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R3") && raza_p[0].equals("R3")){
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero1[i];
+                                       potrero1[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                if(cont_r==nro_reses){
+                                    i=potrero1.length;
+                                }
+                            }                            
+                            break;
+                                
 
                             default:
                             JOptionPane.showMessageDialog(null, "El potrero no existe");
@@ -486,13 +594,145 @@ public class Control_ganado extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "La raza no existe en el potrero");
                     }
                     break;
+                    
+                    case 2:
+                        if(potrero_s>4 && potrero_s<9){
+                        switch(potrero_s){
+                            case 5:
+                      
+                            for (int i = 0; i < potrero2.length; i++) {
+
+                                raza_p=potrero2[i].split("-");
+
+                                if(raza.equalsIgnoreCase("R2") && raza_p[0].equals("R2")){
+                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero5[j].equals("+")){
+                                       potrero5[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R4") && raza_p[0].equals("R4")){
+                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero5[j].equals("+")){
+                                       potrero5[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                if(cont_r==nro_reses){
+                                    i=potrero2.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 6:
+                                 for (int i = 0; i < potrero2.length; i++) {
+
+                                raza_p=potrero2[i].split("-");
+
+                                if(raza.equalsIgnoreCase("R2") && raza_p[0].equals("R2")){
+                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero6[j].equals("+")){
+                                       potrero6[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R4") && raza_p[0].equals("R4")){
+                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero6[j].equals("+")){
+                                       potrero6[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                if(cont_r==nro_reses){
+                                    i=potrero2.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 7:
+                                 for (int i = 0; i < potrero2.length; i++) {
+
+                                raza_p=potrero2[i].split("-");
+
+                                if(raza.equalsIgnoreCase("R2") && raza_p[0].equals("R2")){
+                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero5[j].equals("+")){
+                                       potrero5[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R4") && raza_p[0].equals("R4")){
+                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero7[j].equals("+")){
+                                       potrero7[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                if(cont_r==nro_reses){
+                                    i=potrero2.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 8:
+                                 for (int i = 0; i < potrero2.length; i++) {
+
+                                raza_p=potrero2[i].split("-");
+
+                                if(raza.equalsIgnoreCase("R2") && raza_p[0].equals("R2")){
+                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R4") && raza_p[0].equals("R4")){
+                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero2[i];
+                                       potrero1[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                if(cont_r==nro_reses){
+                                    i=potrero2.length;
+                                }
+                            }                            
+                            break;
+                                
+
+                            default:
+                            JOptionPane.showMessageDialog(null, "El potrero no existe");
+                        }
+                    }
+
+                    else {
+                        JOptionPane.showMessageDialog(null, "La raza no existe en el potrero");
+                    }
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "error en el numero de los potreros");
             }
+
         } catch (Exception error) {
             JOptionPane.showMessageDialog(null,"Ocurrió un error \n" + error);
         }
+        graficas();
 
     }//GEN-LAST:event_b_moverActionPerformed
 
@@ -500,6 +740,42 @@ public class Control_ganado extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {                 
+        llenado_potreros();
+        
+        
+        
+        /* Set the Nimbus look and feel */
+       //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Control_ganado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Control_ganado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Control_ganado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Control_ganado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Control_ganado().setVisible(true);
+            }
+        });
+    }
+    
+    public static void llenado_potreros(){
         try {
              int codigo;
         int vacunado;
@@ -578,43 +854,146 @@ public class Control_ganado extends javax.swing.JFrame {
         } catch (Exception error) {
             JOptionPane.showMessageDialog(null, "Ocurrió un error \n" + error);
         } 
-        
-        /* Set the Nimbus look and feel */
-       //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Control_ganado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Control_ganado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Control_ganado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Control_ganado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Control_ganado().setVisible(true);
-            }
-        });
     }
+    
+    public void graficas(){
+         try {
+            String raza[];
+            int r1=0, r3=0, r2=0, r4=0, r5=0, r6=0;
+            //Gráfico potrero1
+            for (int i = 0; i < potrero1.length; i++) {
+                raza=potrero1[i].split("-");
+                if(raza[0].equals("R1"))r1++;
+                else if(raza[0].equals("R3"))r3++;
+            }
 
+            DefaultPieDataset datos1 = new DefaultPieDataset();
+            datos1.setValue("Raza 1 = "+r1, r1);
+            datos1.setValue("Raza 3 = "+r3, r3);
+
+            JFreeChart grafico_potrero1 = ChartFactory.createPieChart(
+                "Potrero 1",         //nombre del grafico
+                datos1,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel1 = new ChartPanel(grafico_potrero1);
+            panel1.setMouseWheelEnabled(true);
+            panel1.setPreferredSize(new Dimension(200,200));
+
+            jPanel1.setLayout(new BorderLayout());
+            jPanel1.add(panel1,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+
+            //Gráfico portrero 2
+            for (int i = 0; i < potrero2.length; i++) {
+                raza=potrero2[i].split("-");
+                if(raza[0].equals("R2"))r2++;
+                else if(raza[0].equals("R4"))r4++;
+            }
+
+            DefaultPieDataset datos2 = new DefaultPieDataset();
+            datos2.setValue("Raza 2 = "+r2, r2);
+            datos2.setValue("Raza 4 = "+r4, r4);
+
+            JFreeChart grafico_potrero2 = ChartFactory.createPieChart(
+                "Potrero 2",         //nombre del grafico
+                datos2,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel2 = new ChartPanel(grafico_potrero2);
+            panel2.setMouseWheelEnabled(true);
+            panel2.setPreferredSize(new Dimension(200,200));
+
+            jPanel2.setLayout(new BorderLayout());
+            jPanel2.add(panel2,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+
+            r1=0;
+            for (int i = 0; i < potrero3.length; i++) {
+                raza=potrero3[i].split("-");
+                if(raza[0].equals("R1"))r1++;
+                else if(raza[0].equals("R5"))r5++;
+            }
+
+            DefaultPieDataset datos3 = new DefaultPieDataset();
+            datos3.setValue("Raza 1 = "+r1, r1);
+            datos3.setValue("Raza 5 = "+r5, r5);
+
+            JFreeChart grafico_potrero3 = ChartFactory.createPieChart(
+                "Potrero 3",         //nombre del grafico
+                datos3,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel3 = new ChartPanel(grafico_potrero3);
+            panel3.setMouseWheelEnabled(true);
+            panel3.setPreferredSize(new Dimension(200,200));
+
+            jPanel3.setLayout(new BorderLayout());
+            jPanel3.add(panel3,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+
+            r4=0;
+            for (int i = 0; i < potrero4.length; i++) {
+                raza=potrero4[i].split("-");
+                if(raza[0].equals("R4"))r4++;
+                else if(raza[0].equals("R6"))r6++;
+            }
+
+            DefaultPieDataset datos4 = new DefaultPieDataset();
+            datos4.setValue("Raza 4 = "+r4, r4);
+            datos4.setValue("Raza 6 = "+r6, r6);
+
+            JFreeChart grafico_potrero4 = ChartFactory.createPieChart(
+                "Potrero 4",         //nombre del grafico
+                datos4,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel4 = new ChartPanel(grafico_potrero4);
+            panel4.setMouseWheelEnabled(true);
+            panel4.setPreferredSize(new Dimension(200,200));
+
+            jPanel4.setLayout(new BorderLayout());
+            jPanel4.add(panel4,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+
+        } catch (Exception error) {
+            System.out.println("Ocurrió un error \n" + error);
+        }
+    }
+ 
           
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_agregar;
     private javax.swing.JButton b_mover;
     private javax.swing.JButton b_vacunar;
     private javax.swing.JButton b_vender;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     // End of variables declaration//GEN-END:variables
 }
