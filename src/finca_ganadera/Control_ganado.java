@@ -40,7 +40,10 @@ public class Control_ganado extends javax.swing.JFrame {
     static String p_ventas[]=new String [40];
     public Control_ganado() {
         initComponents(); 
+        llenado_potreros();
         graficas();
+        graficas_vacunar();
+        
     }
 
     /**
@@ -269,6 +272,77 @@ public class Control_ganado extends javax.swing.JFrame {
 
     private void b_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_agregarActionPerformed
         // TODO add your handling code here
+        int potrero=Integer.parseInt(JOptionPane.showInputDialog("¿A qué potrero desea agregar las res?"));
+        String raza=JOptionPane.showInputDialog("¿De qué raza es la res?");
+        String vacunado=JOptionPane.showInputDialog("¿Está vacunado?");
+        int codigo, cont=0;
+        
+        switch(potrero){
+            case 1:                
+                if(raza.equalsIgnoreCase("R1") || raza.equalsIgnoreCase("R3")){
+                   for (int i = 0; i < potrero1.length; i++) {
+                       
+                    if(potrero1[i].equals("+")){
+                        codigo=(int)(Math.random()*(500-100)+100);
+                        potrero1[i]=raza.toUpperCase().charAt(0)+String.valueOf(raza.charAt(1))+"-"+codigo+"/"+vacunado.toUpperCase().charAt(0)+vacunado.charAt(1);
+                        cont++;
+                    } 
+                    if (cont==1)i=potrero1.length;
+                    
+                    
+                }
+                }
+                else JOptionPane.showMessageDialog(null, "No se puede agregar esta raza a este potrero");
+                break;
+                
+            case 2:
+                if(raza.equalsIgnoreCase("R2") || raza.equalsIgnoreCase("R4")){
+                   for (int i = 0; i < potrero2.length; i++) {
+                    if(potrero2[i].equals("+")){
+                        codigo=(int)(Math.random()*(500-100)+100);
+                        potrero1[i]=raza.toUpperCase().charAt(0)+String.valueOf(raza.charAt(1))+"-"+codigo+"/"+vacunado.toUpperCase().charAt(0)+vacunado.charAt(1);
+                        cont++;
+                    } 
+                    if (cont==1)i=potrero1.length;
+                } 
+                }
+                else JOptionPane.showMessageDialog(null, "No se puede agregar esta raza a este potrero");
+                break;
+                
+            case 3: 
+                if(raza.equalsIgnoreCase("R1") || raza.equalsIgnoreCase("R5")){
+                   for (int i = 0; i < potrero3.length; i++) {
+                    if(potrero3[i].equals("+")){
+                        codigo=(int)(Math.random()*(500-100)+100);
+                        potrero1[i]=raza.toUpperCase().charAt(0)+String.valueOf(raza.charAt(1))+"-"+codigo+"/"+vacunado.toUpperCase().charAt(0)+vacunado.charAt(1);
+                        cont++;
+                    } 
+                    if (cont==1)i=potrero1.length;
+                } 
+                }
+                else JOptionPane.showMessageDialog(null, "No se puede agregar esta raza a este potrero");
+                break; 
+                
+            case 4:
+                if(raza.equalsIgnoreCase("R4") || raza.equalsIgnoreCase("R6")){
+                   for (int i = 0; i < potrero4.length; i++) {
+                    if(potrero4[i].equals("+")){
+                        codigo=(int)(Math.random()*(500-100)+100);
+                        potrero1[i]=raza.toUpperCase().charAt(0)+String.valueOf(raza.charAt(1))+"-"+codigo+"/"+vacunado.toUpperCase().charAt(0)+vacunado.charAt(1);
+                        cont++;
+                    } 
+                    if (cont==1)i=potrero1.length;
+                } 
+                }
+                else JOptionPane.showMessageDialog(null, "No se puede agregar esta raza a este potrero");
+                break;
+                
+            default: 
+                JOptionPane.showMessageDialog(null, "Las reses solo se pueden agregar a los cuatro primeros potreros");
+                
+        }
+        
+        
     }//GEN-LAST:event_b_agregarActionPerformed
 
     private void b_venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_venderActionPerformed
@@ -280,7 +354,7 @@ public class Control_ganado extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         try {
-            
+            graficas_vacunar();
             byte potrero=Byte.parseByte(JOptionPane.showInputDialog("¿En qué potrero desea vacunar las reses?"));
             byte nro_reses_vacunar=Byte.parseByte(JOptionPane.showInputDialog("¿Cuántas reses desea vacunar?"));
             String vacunado[];
@@ -295,15 +369,19 @@ public class Control_ganado extends javax.swing.JFrame {
                         cont_vac_jor++;
                         tot_vacu++;
                     }
-
+                    
                     if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>=10 ){
-                        i=potrero1.length;
-                        if(cont_vac_jor==0){
+                        i=potrero1.length;     
+                }
+                    }
+                if(nro_reses_vacunar>cont_vac_jor){
+                        JOptionPane.showMessageDialog(null, "No se puede vacunar tantas reses");
+                    }
+                    if(cont_vac_jor==0){
                             JOptionPane.showMessageDialog(null, "No hay más reses por vacunar");
                         }
-                    }
-                    if(cont_vac_jor>=10)JOptionPane.showMessageDialog(null, "No se pueden vacunar mas reses en este jornada");
-                }
+                    
+                    
                 break;
 
                 case 2:
@@ -315,14 +393,17 @@ public class Control_ganado extends javax.swing.JFrame {
                         tot_vacu++;
                     }
 
-                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>10 ){
+                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>=10 ){
                         i=potrero2.length;
-                        if(cont_vac_jor==0){
-                            JOptionPane.showMessageDialog(null, "No hay más rese por vacunar");
-                        }
+                        
                     }
-                    if(cont_vac_jor>=10)JOptionPane.showMessageDialog(null, "No se pueden vacunar mas reses en este jornada");
                 }
+                 if(nro_reses_vacunar>cont_vac_jor){
+                        JOptionPane.showMessageDialog(null, "No se puede vacunar tantas reses");
+                    }
+                    if(cont_vac_jor==0){
+                            JOptionPane.showMessageDialog(null, "No hay más reses por vacunar");
+                        }
                 break;
 
                 case 3:
@@ -334,14 +415,17 @@ public class Control_ganado extends javax.swing.JFrame {
                         tot_vacu++;
                     }
 
-                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>10 ){
+                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>=10 ){
                         i=potrero3.length;
-                        if(cont_vac_jor==0){
-                            JOptionPane.showMessageDialog(null, "No hay más rese por vacunar");
-                        }
+                        
                     }
-                    if(cont_vac_jor>=10)JOptionPane.showMessageDialog(null, "No se pueden vacunar mas reses en este jornada");
                 }
+                 if(nro_reses_vacunar>cont_vac_jor){
+                        JOptionPane.showMessageDialog(null, "No se puede vacunar tantas reses");
+                    }
+                    if(cont_vac_jor==0){
+                            JOptionPane.showMessageDialog(null, "No hay más reses por vacunar");
+                        }
                 break;
 
                 case 4:
@@ -353,14 +437,17 @@ public class Control_ganado extends javax.swing.JFrame {
                         tot_vacu++;
                     }
 
-                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>10 ){
+                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>=10 ){
                         i=potrero4.length;
-                        if(cont_vac_jor==0){
-                            JOptionPane.showMessageDialog(null, "No hay más rese por vacunar");
-                        }
+                       
                     }
-                    if(cont_vac_jor>=10)JOptionPane.showMessageDialog(null, "No se pueden vacunar mas reses en este jornada");
                 }
+                 if(nro_reses_vacunar>cont_vac_jor){
+                        JOptionPane.showMessageDialog(null, "No se puede vacunar tantas reses");
+                    }
+                    if(cont_vac_jor==0){
+                            JOptionPane.showMessageDialog(null, "No hay más reses por vacunar");
+                        }
                 break;
 
                 case 5:
@@ -372,14 +459,17 @@ public class Control_ganado extends javax.swing.JFrame {
                         tot_vacu++;
                     }
 
-                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>10 ){
+                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>=10 ){
                         i=potrero5.length;
-                        if(cont_vac_jor==0){
-                            JOptionPane.showMessageDialog(null, "No hay más rese por vacunar");
-                        }
+                        
                     }
-                    if(cont_vac_jor>=10)JOptionPane.showMessageDialog(null, "No se pueden vacunar mas reses en este jornada");
                 }
+                 if(nro_reses_vacunar>cont_vac_jor){
+                        JOptionPane.showMessageDialog(null, "No se puede vacunar tantas reses");
+                    }
+                    if(cont_vac_jor==0){
+                            JOptionPane.showMessageDialog(null, "No hay más reses por vacunar");
+                        }
                 break;
 
                 case 6:
@@ -391,14 +481,17 @@ public class Control_ganado extends javax.swing.JFrame {
                         tot_vacu++;
                     }
 
-                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>10 ){
+                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>=10 ){
                         i=potrero6.length;
-                        if(cont_vac_jor==0){
-                            JOptionPane.showMessageDialog(null, "No hay más rese por vacunar");
-                        }
+                        
                     }
-                    if(cont_vac_jor>=10)JOptionPane.showMessageDialog(null, "No se pueden vacunar mas reses en este jornada");
                 }
+                 if(nro_reses_vacunar>cont_vac_jor){
+                        JOptionPane.showMessageDialog(null, "No se puede vacunar tantas reses");
+                    }
+                    if(cont_vac_jor==0){
+                            JOptionPane.showMessageDialog(null, "No hay más reses por vacunar");
+                        }
                 break;
 
                 case 7:
@@ -410,14 +503,17 @@ public class Control_ganado extends javax.swing.JFrame {
                         tot_vacu++;
                     }
 
-                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>10 ){
+                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>=10 ){
                         i=potrero7.length;
-                        if(cont_vac_jor==0){
-                            JOptionPane.showMessageDialog(null, "No hay más rese por vacunar");
-                        }
-                    }
-                    if(cont_vac_jor>=10)JOptionPane.showMessageDialog(null, "No se pueden vacunar mas reses en este jornada");
+                       
+                    } 
                 }
+                 if(nro_reses_vacunar>cont_vac_jor){
+                        JOptionPane.showMessageDialog(null, "No se puede vacunar tantas reses");
+                    }
+                    if(cont_vac_jor==0){
+                            JOptionPane.showMessageDialog(null, "No hay más reses por vacunar");
+                        }
                 break;
 
                 case 8:
@@ -429,18 +525,21 @@ public class Control_ganado extends javax.swing.JFrame {
                         tot_vacu++;
                     }
 
-                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>10 ){
+                    if(cont_vac_jor==nro_reses_vacunar || cont_vac_jor>=10 ){
                         i=potrero8.length;
-                        if(cont_vac_jor==0){
-                            JOptionPane.showMessageDialog(null, "No hay más rese por vacunar");
-                        }
+                        
                     }
-                    if(cont_vac_jor>=10)JOptionPane.showMessageDialog(null, "No se pueden vacunar mas reses en este jornada");
                 }
+                 if(nro_reses_vacunar>cont_vac_jor){
+                        JOptionPane.showMessageDialog(null, "No se puede vacunar tantas reses");
+                    }
+                    if(cont_vac_jor==0){
+                            JOptionPane.showMessageDialog(null, "No hay más reses por vacunar");
+                        }
                 break;
 
                 default:
-                JOptionPane.showMessageDialog(null, "El potrero no esxiste");
+                JOptionPane.showMessageDialog(null, "El potrero no existe");
 
             }
             if(tot_vacu>=10)JOptionPane.showMessageDialog(null, "No se puden vacunar más reses en este jornada");
@@ -448,6 +547,7 @@ public class Control_ganado extends javax.swing.JFrame {
         } catch (Exception error) {
             JOptionPane.showMessageDialog(null, "Ocurrió un error \n" + error);
         }
+        graficas_vacunar();
 
     }//GEN-LAST:event_b_vacunarActionPerformed
 
@@ -458,23 +558,17 @@ public class Control_ganado extends javax.swing.JFrame {
             int potrero_s=Integer.parseInt(JOptionPane.showInputDialog("A que potrero desea mover las reses"));
             int nro_reses=Integer.parseInt(JOptionPane.showInputDialog("¿Cuántas reses desea mover?"));
             String raza=JOptionPane.showInputDialog("Ingrese la raza");
-            String raza_p[];
             int j=0, cont_r=0;
 
-            if (potrero>0 && potrero<5){
+           if (potrero>0 && potrero<5){
                 switch(potrero){
                     case 1:
-
                     if(potrero_s>4 && potrero_s<9){
                         switch(potrero_s){
                             case 5:
                       
                             for (int i = 0; i < potrero1.length; i++) {
-
-                                raza_p=potrero1[i].split("-");
-
-                                if(raza.equalsIgnoreCase("R1") && raza_p[0].equals("R1")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                if(raza.equalsIgnoreCase("R1")){
                                     if(potrero5[j].equals("+")){
                                        potrero5[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -482,8 +576,7 @@ public class Control_ganado extends javax.swing.JFrame {
                                         j++;
                                     }else j++;
                                 }
-                                else if(raza.equalsIgnoreCase("R3") && raza_p[0].equals("R3")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                else if(raza.equalsIgnoreCase("R3")){
                                     if(potrero5[j].equals("+")){
                                        potrero5[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -491,6 +584,7 @@ public class Control_ganado extends javax.swing.JFrame {
                                        j++;
                                     }else j++; 
                                 }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
                                 if(cont_r==nro_reses){
                                     i=potrero1.length;
                                 }
@@ -499,11 +593,7 @@ public class Control_ganado extends javax.swing.JFrame {
                             
                             case 6:
                                  for (int i = 0; i < potrero1.length; i++) {
-
-                                raza_p=potrero1[i].split("-");
-
-                                if(raza.equalsIgnoreCase("R1") && raza_p[0].equals("R1")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                if(raza.equalsIgnoreCase("R1")){
                                     if(potrero6[j].equals("+")){
                                        potrero6[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -511,8 +601,7 @@ public class Control_ganado extends javax.swing.JFrame {
                                         j++;
                                     }else j++;
                                 }
-                                else if(raza.equalsIgnoreCase("R3") && raza_p[0].equals("R3")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                else if(raza.equalsIgnoreCase("R3")){
                                     if(potrero6[j].equals("+")){
                                        potrero6[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -520,6 +609,7 @@ public class Control_ganado extends javax.swing.JFrame {
                                        j++;
                                     }else j++; 
                                 }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
                                 if(cont_r==nro_reses){
                                     i=potrero1.length;
                                 }
@@ -527,21 +617,16 @@ public class Control_ganado extends javax.swing.JFrame {
                             break;
                             
                             case 7:
-                                 for (int i = 0; i < potrero1.length; i++) {
-
-                                raza_p=potrero1[i].split("-");
-
-                                if(raza.equalsIgnoreCase("R1") && raza_p[0].equals("R1")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
-                                    if(potrero5[j].equals("+")){
-                                       potrero5[j]=potrero1[i];
+                                for (int i = 0; i < potrero1.length; i++) {
+                                if(raza.equalsIgnoreCase("R1")){
+                                    if(potrero7[j].equals("+")){
+                                       potrero7[j]=potrero1[i];
                                        potrero1[i]="+"; 
                                        cont_r++;
                                         j++;
                                     }else j++;
                                 }
-                                else if(raza.equalsIgnoreCase("R3") && raza_p[0].equals("R3")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                else if(raza.equalsIgnoreCase("R3")){
                                     if(potrero7[j].equals("+")){
                                        potrero7[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -549,19 +634,15 @@ public class Control_ganado extends javax.swing.JFrame {
                                        j++;
                                     }else j++; 
                                 }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
                                 if(cont_r==nro_reses){
                                     i=potrero1.length;
                                 }
                             }                            
                             break;
-                            
                             case 8:
-                                 for (int i = 0; i < potrero1.length; i++) {
-
-                                raza_p=potrero1[i].split("-");
-
-                                if(raza.equalsIgnoreCase("R1") && raza_p[0].equals("R1")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                for (int i = 0; i < potrero1.length; i++) {
+                                if(raza.equalsIgnoreCase("R1")){
                                     if(potrero8[j].equals("+")){
                                        potrero8[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -569,8 +650,7 @@ public class Control_ganado extends javax.swing.JFrame {
                                         j++;
                                     }else j++;
                                 }
-                                else if(raza.equalsIgnoreCase("R3") && raza_p[0].equals("R3")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
+                                else if(raza.equalsIgnoreCase("R3")){
                                     if(potrero8[j].equals("+")){
                                        potrero8[j]=potrero1[i];
                                        potrero1[i]="+"; 
@@ -578,13 +658,123 @@ public class Control_ganado extends javax.swing.JFrame {
                                        j++;
                                     }else j++; 
                                 }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
                                 if(cont_r==nro_reses){
                                     i=potrero1.length;
                                 }
                             }                            
                             break;
-                                
+                            default:
+                            JOptionPane.showMessageDialog(null, "El potrero no existe");
+                        }
+                    }
 
+                    else {
+                        JOptionPane.showMessageDialog(null, "La raza no existe en el potrero");
+                    }
+                    break;
+                case 2:
+                    if(potrero_s>4 && potrero_s<9){
+                        switch(potrero_s){
+                            case 5:
+                      
+                            for (int i = 0; i < potrero2.length; i++) {
+                                if(raza.equalsIgnoreCase("R2")){
+                                    if(potrero5[j].equals("+")){
+                                       potrero5[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R4")){
+                                    if(potrero5[j].equals("+")){
+                                       potrero5[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero2.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 6:
+                                 for (int i = 0; i < potrero2.length; i++) {
+                                if(raza.equalsIgnoreCase("R2")){
+                                    if(potrero6[j].equals("+")){
+                                       potrero6[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R4")){
+                                    if(potrero6[j].equals("+")){
+                                       potrero6[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero2.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 7:
+                                for (int i = 0; i < potrero2.length; i++) {
+                                if(raza.equalsIgnoreCase("R2")){
+                                    if(potrero7[j].equals("+")){
+                                       potrero7[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R4")){
+                                    if(potrero7[j].equals("+")){
+                                       potrero7[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero2.length;
+                                }
+                            }                            
+                            break;
+                            case 8:
+                                for (int i = 0; i < potrero2.length; i++) {
+                                if(raza.equalsIgnoreCase("R2")){
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R4")){
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero2[i];
+                                       potrero2[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero2.length;
+                                }
+                            }                            
+                            break;
                             default:
                             JOptionPane.showMessageDialog(null, "El potrero no existe");
                         }
@@ -595,127 +785,108 @@ public class Control_ganado extends javax.swing.JFrame {
                     }
                     break;
                     
-                    case 2:
-                        if(potrero_s>4 && potrero_s<9){
+                case 3: 
+                    if(potrero_s>4 && potrero_s<9){
                         switch(potrero_s){
                             case 5:
                       
-                            for (int i = 0; i < potrero2.length; i++) {
-
-                                raza_p=potrero2[i].split("-");
-
-                                if(raza.equalsIgnoreCase("R2") && raza_p[0].equals("R2")){
-                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                            for (int i = 0; i < potrero3.length; i++) {
+                                if(raza.equalsIgnoreCase("R1")){
                                     if(potrero5[j].equals("+")){
-                                       potrero5[j]=potrero2[i];
-                                       potrero2[i]="+"; 
+                                       potrero5[j]=potrero3[i];
+                                       potrero3[i]="+"; 
                                        cont_r++;
                                         j++;
                                     }else j++;
                                 }
-                                else if(raza.equalsIgnoreCase("R4") && raza_p[0].equals("R4")){
-                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                else if(raza.equalsIgnoreCase("R5")){
                                     if(potrero5[j].equals("+")){
-                                       potrero5[j]=potrero2[i];
+                                       potrero5[j]=potrero3[i];
                                        potrero2[i]="+"; 
                                        cont_r++;
                                        j++;
                                     }else j++; 
                                 }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
                                 if(cont_r==nro_reses){
-                                    i=potrero2.length;
+                                    i=potrero3.length;
                                 }
                             }                            
                             break;
                             
                             case 6:
-                                 for (int i = 0; i < potrero2.length; i++) {
-
-                                raza_p=potrero2[i].split("-");
-
-                                if(raza.equalsIgnoreCase("R2") && raza_p[0].equals("R2")){
-                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                 for (int i = 0; i < potrero3.length; i++) {
+                                if(raza.equalsIgnoreCase("R1")){
                                     if(potrero6[j].equals("+")){
-                                       potrero6[j]=potrero2[i];
-                                       potrero2[i]="+"; 
+                                       potrero6[j]=potrero3[i];
+                                       potrero3[i]="+"; 
                                        cont_r++;
                                         j++;
                                     }else j++;
                                 }
-                                else if(raza.equalsIgnoreCase("R4") && raza_p[0].equals("R4")){
-                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                else if(raza.equalsIgnoreCase("R5")){
                                     if(potrero6[j].equals("+")){
-                                       potrero6[j]=potrero2[i];
-                                       potrero2[i]="+"; 
+                                       potrero6[j]=potrero3[i];
+                                       potrero3[i]="+"; 
                                        cont_r++;
                                        j++;
                                     }else j++; 
                                 }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
                                 if(cont_r==nro_reses){
-                                    i=potrero2.length;
+                                    i=potrero3.length;
                                 }
                             }                            
                             break;
                             
                             case 7:
-                                 for (int i = 0; i < potrero2.length; i++) {
-
-                                raza_p=potrero2[i].split("-");
-
-                                if(raza.equalsIgnoreCase("R2") && raza_p[0].equals("R2")){
-                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
-                                    if(potrero5[j].equals("+")){
-                                       potrero5[j]=potrero2[i];
-                                       potrero2[i]="+"; 
-                                       cont_r++;
-                                        j++;
-                                    }else j++;
-                                }
-                                else if(raza.equalsIgnoreCase("R4") && raza_p[0].equals("R4")){
-                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
+                                for (int i = 0; i < potrero3.length; i++) {
+                                if(raza.equalsIgnoreCase("R1")){
                                     if(potrero7[j].equals("+")){
-                                       potrero7[j]=potrero2[i];
-                                       potrero2[i]="+"; 
-                                       cont_r++;
-                                       j++;
-                                    }else j++; 
-                                }
-                                if(cont_r==nro_reses){
-                                    i=potrero2.length;
-                                }
-                            }                            
-                            break;
-                            
-                            case 8:
-                                 for (int i = 0; i < potrero2.length; i++) {
-
-                                raza_p=potrero2[i].split("-");
-
-                                if(raza.equalsIgnoreCase("R2") && raza_p[0].equals("R2")){
-                                    potrero2[i]=raza_p[0]+"-"+raza_p[1];
-                                    if(potrero8[j].equals("+")){
-                                       potrero8[j]=potrero2[i];
-                                       potrero2[i]="+"; 
+                                       potrero7[j]=potrero3[i];
+                                       potrero3[i]="+"; 
                                        cont_r++;
                                         j++;
                                     }else j++;
                                 }
-                                else if(raza.equalsIgnoreCase("R4") && raza_p[0].equals("R4")){
-                                    potrero1[i]=raza_p[0]+"-"+raza_p[1];
-                                    if(potrero8[j].equals("+")){
-                                       potrero8[j]=potrero2[i];
-                                       potrero1[i]="+"; 
+                                else if(raza.equalsIgnoreCase("R5")){
+                                    if(potrero7[j].equals("+")){
+                                       potrero7[j]=potrero3[i];
+                                       potrero3[i]="+"; 
                                        cont_r++;
                                        j++;
                                     }else j++; 
                                 }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
                                 if(cont_r==nro_reses){
-                                    i=potrero2.length;
+                                    i=potrero3.length;
                                 }
                             }                            
                             break;
-                                
-
+                            case 8:
+                                for (int i = 0; i < potrero3.length; i++) {
+                                if(raza.equalsIgnoreCase("R1")){
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero3[i];
+                                       potrero3[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R5")){
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero3[i];
+                                       potrero3[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero3.length;
+                                }
+                            }                            
+                            break;
                             default:
                             JOptionPane.showMessageDialog(null, "El potrero no existe");
                         }
@@ -724,23 +895,138 @@ public class Control_ganado extends javax.swing.JFrame {
                     else {
                         JOptionPane.showMessageDialog(null, "La raza no existe en el potrero");
                     }
+                    break;
+                   
+                case 4:
+                    if(potrero_s>4 && potrero_s<9){
+                        switch(potrero_s){
+                            case 5:
+                      
+                            for (int i = 0; i < potrero4.length; i++) {
+                                if(raza.equalsIgnoreCase("R4")){
+                                    if(potrero5[j].equals("+")){
+                                       potrero5[j]=potrero4[i];
+                                       potrero4[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R6")){
+                                    if(potrero5[j].equals("+")){
+                                       potrero5[j]=potrero4[i];
+                                       potrero4[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero4.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 6:
+                                 for (int i = 0; i < potrero4.length; i++) {
+                                if(raza.equalsIgnoreCase("R4")){
+                                    if(potrero6[j].equals("+")){
+                                       potrero6[j]=potrero4[i];
+                                       potrero4[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R6")){
+                                    if(potrero6[j].equals("+")){
+                                       potrero6[j]=potrero4[i];
+                                       potrero4[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero4.length;
+                                }
+                            }                            
+                            break;
+                            
+                            case 7:
+                                for (int i = 0; i < potrero4.length; i++) {
+                                if(raza.equalsIgnoreCase("R4")){
+                                    if(potrero7[j].equals("+")){
+                                       potrero7[j]=potrero4[i];
+                                       potrero4[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R6")){
+                                    if(potrero7[j].equals("+")){
+                                       potrero7[j]=potrero4[i];
+                                       potrero4[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero4.length;
+                                }
+                            }                            
+                            break;
+                            case 8:
+                                for (int i = 0; i < potrero4.length; i++) {
+                                if(raza.equalsIgnoreCase("R4")){
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero4[i];
+                                       potrero4[i]="+"; 
+                                       cont_r++;
+                                        j++;
+                                    }else j++;
+                                }
+                                else if(raza.equalsIgnoreCase("R6")){
+                                    if(potrero8[j].equals("+")){
+                                       potrero8[j]=potrero4[i];
+                                       potrero4[i]="+"; 
+                                       cont_r++;
+                                       j++;
+                                    }else j++; 
+                                }
+                                else JOptionPane.showMessageDialog(null, "Esta raza no se puede meter en este potrero");
+                                if(cont_r==nro_reses){
+                                    i=potrero4.length;
+                                }
+                            }                            
+                            break;
+                            default:
+                            JOptionPane.showMessageDialog(null, "El potrero no existe");
+                        }
+                    }
+
+                    else {
+                        JOptionPane.showMessageDialog(null, "La raza no existe en el potrero");
+                    }
+                    break;
+                    
+                case 5:
+                    
+                        
                 }
-            }else{
-                JOptionPane.showMessageDialog(null, "error en el numero de los potreros");
-            }
+           }
+                        
 
         } catch (Exception error) {
             JOptionPane.showMessageDialog(null,"Ocurrió un error \n" + error);
         }
+        
         graficas();
-
     }//GEN-LAST:event_b_moverActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {                 
-        llenado_potreros();
         
         
         
@@ -830,27 +1116,27 @@ public class Control_ganado extends javax.swing.JFrame {
                 potrero1[i]+="/No";
             }
             vacunado=(int)(Math.random()*2);
-            if(vacunado==1 && !potrero1[i].equals("+")){
+            if(vacunado==1 && !potrero2[i].equals("+")){
                 potrero2[i]+="/Si";
             }
-            else if(vacunado==0 && !potrero1[i].equals("+")) {
+            else if(vacunado==0 && !potrero2[i].equals("+")) {
                 potrero2[i]+="/No";
             }
             vacunado=(int)(Math.random()*2);
-            if(vacunado==1 && !potrero1[i].equals("+")){
+            if(vacunado==1 && !potrero3[i].equals("+")){
                 potrero3[i]+="/Si";
             }
-            else if(vacunado==0 && !potrero1[i].equals("+")) {
+            else if(vacunado==0 && !potrero3[i].equals("+")) {
                 potrero3[i]+="/No";
             }
             vacunado=(int)(Math.random()*2);
-            if(vacunado==1 && !potrero1[i].equals("+")){
+            if(vacunado==1 && !potrero4[i].equals("+")){
                 potrero4[i]+="/Si";
             }
-            else if(vacunado==0 && !potrero1[i].equals("+")) {
+            else if(vacunado==0 && !potrero4[i].equals("+")) {
                 potrero4[i]+="/No";
             }
-        }
+        }            
         } catch (Exception error) {
             JOptionPane.showMessageDialog(null, "Ocurrió un error \n" + error);
         } 
@@ -979,6 +1265,290 @@ public class Control_ganado extends javax.swing.JFrame {
         } catch (Exception error) {
             System.out.println("Ocurrió un error \n" + error);
         }
+    }
+    
+    public void graficas_vacunar(){
+        try {
+            String vacuna[];
+            int cont_si=0, cont_no=0;
+            //Gráfico potrero1
+            for (int i = 0; i < potrero1.length; i++) {
+                if(!potrero1[i].equals("+")){
+                vacuna=potrero1[i].split("/");
+                if(vacuna[1].equals("Si"))cont_si++;
+                else if(vacuna[1].equals("No"))cont_no++;
+                }
+                
+                
+            }
+
+            DefaultPieDataset datos1 = new DefaultPieDataset();
+            datos1.setValue("Vacunados = "+cont_si, cont_si);
+            datos1.setValue("Sin vacunar = "+cont_no, cont_no);
+
+            JFreeChart grafico_potrero1 = ChartFactory.createPieChart(
+                "Potrero 1",         //nombre del grafico
+                datos1,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel1 = new ChartPanel(grafico_potrero1);
+            panel1.setMouseWheelEnabled(true);
+            panel1.setPreferredSize(new Dimension(200,200));
+
+            jPanel5.setLayout(new BorderLayout());
+            jPanel5.add(panel1,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+            
+            cont_si=0;cont_no=0;
+            for (int i = 0; i < potrero2.length; i++) {
+                if(!potrero2[i].equals("+")){
+                    vacuna=potrero2[i].split("/");
+                    if(vacuna[1].equals("Si"))cont_si++;
+                    else if(vacuna[1].equals("No"))cont_no++;
+                }
+               
+                
+            }
+
+            DefaultPieDataset datos2 = new DefaultPieDataset();
+            datos2.setValue("Vacunados = "+cont_si, cont_si);
+            datos2.setValue("Sin vacunar = "+cont_no, cont_no);
+
+            JFreeChart grafico_potrero2 = ChartFactory.createPieChart(
+                "Potrero 2",         //nombre del grafico
+                datos2,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel2 = new ChartPanel(grafico_potrero2);
+            panel2.setMouseWheelEnabled(true);
+            panel2.setPreferredSize(new Dimension(200,200));
+
+            jPanel6.setLayout(new BorderLayout());
+            jPanel6.add(panel2,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+            
+            cont_si=0;cont_no=0;
+            for (int i = 0; i < potrero3.length; i++) {
+                if(!potrero3[i].equals("+")){
+                    vacuna=potrero3[i].split("/");
+                    if(vacuna[1].equals("Si"))cont_si++;
+                    else if(vacuna[1].equals("No"))cont_no++;
+                }
+               
+                
+            }
+
+            DefaultPieDataset datos3 = new DefaultPieDataset();
+            datos3.setValue("Vacunados = "+cont_si, cont_si);
+            datos3.setValue("Sin vacunar = "+cont_no, cont_no);
+
+            JFreeChart grafico_potrero3 = ChartFactory.createPieChart(
+                "Potrero 3",         //nombre del grafico
+                datos3,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel3 = new ChartPanel(grafico_potrero3);
+            panel3.setMouseWheelEnabled(true);
+            panel3.setPreferredSize(new Dimension(200,200));
+
+            jPanel7.setLayout(new BorderLayout());
+            jPanel7.add(panel3,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+            
+            cont_si=0;cont_no=0;
+            for (int i = 0; i < potrero4.length; i++) {
+                if(!potrero4[i].equals("+")){
+                    vacuna=potrero4[i].split("/");
+                    if(vacuna[1].equals("Si"))cont_si++;
+                    else if(vacuna[1].equals("No"))cont_no++;
+                 
+                }
+
+            }
+
+            DefaultPieDataset datos4 = new DefaultPieDataset();
+            datos4.setValue("Vacunados = "+cont_si, cont_si);
+            datos4.setValue("Sin vacunar = "+cont_no, cont_no);
+
+            JFreeChart grafico_potrero4 = ChartFactory.createPieChart(
+                "Potrero 4",         //nombre del grafico
+                datos4,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel4 = new ChartPanel(grafico_potrero4);
+            panel4.setMouseWheelEnabled(true);
+            panel4.setPreferredSize(new Dimension(200,200));
+
+            jPanel8.setLayout(new BorderLayout());
+            jPanel8.add(panel4,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+            
+            cont_si=0;cont_no=0;
+            for (int i = 0; i < potrero5.length; i++) {
+                if(!potrero5[i].equals("+")){
+                    vacuna=potrero5[i].split("/");
+                    if(vacuna[1].equals("Si"))cont_si++;
+                    else if(vacuna[1].equals("No"))cont_no++;
+                }
+                
+                
+            }
+
+            DefaultPieDataset datos5 = new DefaultPieDataset();
+            datos5.setValue("Vacunados = "+cont_si, cont_si);
+            datos5.setValue("Sin vacunar = "+cont_no, cont_no);
+
+            JFreeChart grafico_potrero5 = ChartFactory.createPieChart(
+                "Potrero 5",         //nombre del grafico
+                datos5,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel5 = new ChartPanel(grafico_potrero5);
+            panel5.setMouseWheelEnabled(true);
+            panel5.setPreferredSize(new Dimension(200,200));
+
+            jPanel6.setLayout(new BorderLayout());
+            jPanel6.add(panel5,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+            
+            cont_si=0;cont_no=0;
+            for (int i = 0; i < potrero6.length; i++) {
+                if(!potrero6[i].equals("+")){
+                    vacuna=potrero6[i].split("/");
+                    if(vacuna[1].equals("Si"))cont_si++;
+                    else if(vacuna[1].equals("No"))cont_no++;
+                }
+                
+                
+            }
+
+            DefaultPieDataset datos6 = new DefaultPieDataset();
+            datos6.setValue("Vacunados = "+cont_si, cont_si);
+            datos6.setValue("Sin vacunar = "+cont_no, cont_no);
+
+            JFreeChart grafico_potrero6 = ChartFactory.createPieChart(
+                "Potrero 6",         //nombre del grafico
+                datos6,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel6 = new ChartPanel(grafico_potrero6);
+            panel6.setMouseWheelEnabled(true);
+            panel6.setPreferredSize(new Dimension(200,200));
+
+            jPanel6.setLayout(new BorderLayout());
+            jPanel6.add(panel6,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+            
+            cont_si=0;cont_no=0;
+            for (int i = 0; i < potrero7.length; i++) {
+                if(!potrero7[i].equals("+")){
+                    vacuna=potrero7[i].split("/");
+                    if(vacuna[1].equals("Si"))cont_si++;
+                    else if(vacuna[1].equals("No"))cont_no++;
+                }
+                
+                
+            }
+
+            DefaultPieDataset datos7 = new DefaultPieDataset();
+            datos7.setValue("Vacunados = "+cont_si, cont_si);
+            datos7.setValue("Sin vacunar = "+cont_no, cont_no);
+
+            JFreeChart grafico_potrero7 = ChartFactory.createPieChart(
+                "Potrero 7",         //nombre del grafico
+                datos7,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel7 = new ChartPanel(grafico_potrero7);
+            panel7.setMouseWheelEnabled(true);
+            panel7.setPreferredSize(new Dimension(200,200));
+
+            jPanel6.setLayout(new BorderLayout());
+            jPanel6.add(panel7,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+            
+            cont_si=0;cont_no=0;
+            for (int i = 0; i < potrero8.length; i++) {
+                if(!potrero8[i].equals("+")){
+                    vacuna=potrero8[i].split("/");
+                    if(vacuna[1].equals("Si"))cont_si++;
+                    else if(vacuna[1].equals("No"))cont_no++;
+                }
+                
+                
+            }
+
+            DefaultPieDataset datos8 = new DefaultPieDataset();
+            datos8.setValue("Vacunados = "+cont_si, cont_si);
+            datos8.setValue("Sin vacunar = "+cont_no, cont_no);
+
+            JFreeChart grafico_potrero8 = ChartFactory.createPieChart(
+                "Potrero 8",         //nombre del grafico
+                datos8,        //datos
+                true,        //nombre de categorias
+                true,        //herramientas
+                false        //generaciónn de URL
+            );
+
+            ChartPanel panel8 = new ChartPanel(grafico_potrero8);
+            panel8.setMouseWheelEnabled(true);
+            panel8.setPreferredSize(new Dimension(200,200));
+
+            jPanel6.setLayout(new BorderLayout());
+            jPanel6.add(panel8,BorderLayout.NORTH);
+
+            pack();
+            repaint();
+
+
+
+
+
+
+            
+            
+            
+                      
+
+        } catch (Exception error) {
+            System.out.println("Ocurrió un error \n" + error);
+        }
+    
     }
  
           
